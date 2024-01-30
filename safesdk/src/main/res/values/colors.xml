@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_ads_background">#FFFFFF</color>
+    <color name="color_ads_button_background">#F54B4D</color>
+    <color name="color_text_button">#FFFFFF</color>
+    <color name="color_text_title">#000000</color>
+    <color name="color_text_body">#787878</color>
+    <color name="black">#000000</color>
+    <color name="fb_button_color">#4080FF</color>
+    <color name="white">#FFF</color>
+    <color name="red">#F54B4D</color>
+    <color name="fb_border_color">#F54B4D</color>
+
+    <color name="admob_border_color">#D5D5D7</color>
+    <color name="admob_native_bg">#FFFFFF</color>
+    <color name="admob_ad_tag">#DDD000</color>
+
+    <color name="fgColor">#EBEBEB</color>
+    <color name="blue_lnk">#4683F5</color>
+    <color name="grey2">#989898</color>
+
+    <color name="inter_bg">#FCFAF8</color>
+    <color name="inter_loader">#515151</color>
+    <color name="inter_txt">#747372</color>
+    <color name="sdk_app_color">#0162b1</color>
+
+
+</resources>

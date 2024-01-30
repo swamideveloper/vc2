@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Video Call</string>
+    <string name="app_title">Live Video Call</string>
+    <string name="termCondition_msg">Please read the terms and conditions carefully before registering, accessing or using this apps services(defined below). The terms and conditions are legal contract (Agreement) between You and our app(CallHistory). You agree and acknowledge that you have read the terms and conditions set forth below. If you do not agree to these terms and conditions or do not wish to be bound by these terms and conditions, you may not use the services and/or immediately terminate the service and/or uninstall the mobile application. We may amend the terms and conditions at any time by posting an updated version at this App(s). The updated version of the terms of service shall take effect immediately upon posting. It is Your responsibility to review these Terms of Use periodically for updates/changes. Your continued use of our App following the posting of changes will mean that you accept and agree to the revisions including additional Terms or removal of portions of these Terms, modifications etc. As long as You comply with these Terms of Use, We grant You a personal, non-exclusive, non-transferable, limited privilege to enter and avail the Services. We only charged for giving banking detail and user\'s device detail. USING OUR APP INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE TERMS OF USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE PROCEEDING. By impliedly or expressly accepting these Terms of Use, You also accept and agree to be bound by our policies (including but not limited to Privacy Policy) available on our websites(s) as amended from time to time.</string>
+
+    <string name="first_check">I understand that sharing of inappropriate content will not be tolerated.</string>
+    <string name="second_check">I confirm that I\'m 18 years old or above.</string>
+    <string name="pp"><p style="padding-top: 25px">\tI agree with all <a href="https://jannumerijan.blogspot.com/2022/09/privacy-policy.html">Term and Condiation</a></p></string>
+    <string name="age_group_one"><b>18-35</b> (Young Adult)</string>
+    <string name="age_group_two"><b>36-49</b> (Aged Adult)</string>
+    <string name="age_group_three"><b>50+</b> (Older Adult)</string>
+    <string name="age_group_head"><b>Prefer Age : </b>Select Your Age</string>
+
+    <string name="title_1">Dress appropriately</string>
+    <string name="title_2">Fill your Face with Light</string>
+    <string name="title_3">Raise your Camera</string>
+    <string name="title_4">Find a quiet Place</string>
+    <string name="title_5">Choose a neutral Background</string>
+    <string name="title_6">Check your tech</string>
+    <string name="title_7">Body Language</string>
+    <string name="title_8">Keep clear of Distractions</string>
+
+    <string name="advice_1">You need to dress for a video call as you would for an in-person meeting – or as close as possible. We may be working at home, but first impressions still matter. What you wear is nearly as important as what you say. As you are at home, it may be ok to take it down a notch, but not too far. More cashmere sweater than varsity sweatshirt.
+        If you are in any doubt, always dress up, never down. Know that if you are talking with the CEO of a bank, and they expect a tie at all times, you will still need to wear a tie! Dress appropriately professional for the type of video call you are on.</string>
+    <string name="advice_2">In an ideal world, the best room in your house to conduct a video call will also have exceptional lighting. Failing that, cheat.
+        Get two lamps and position them on either side of your desk. That way, your face will be illuminated from both sides, and you will avoid unnatural shadows. Video quality is not always the best, so every trick will help you make a good impression.</string>
+    <string name="advice_3">Position your webcam at eye level or higher. This way, you will look directly into the camera, not down, and look more natural.
+        If this means you need to stack your laptop or screen on some books, do it. Just make sure it is not balanced precariously. You would not want it to fall over mid-video call.
+        Make sure to look at the camera as much as possible or at the screen close to where the camera is. It will appear as direct eye contact. Avoid looking at yourself in the small frame of the corner of your screen.</string>
+    <string name="advice_4">While we do not have much control over audio quality in a video call, you will sound better in a quiet room.
+        Keep in mind that headphones can help you cut ambient noise and ensure you hear what is being said. Remember that if you can not hear the discussion, you will likely answer incorrectly when called on.
+        Make sure your headphone mic is working correctly too. You may need to try a couple of headphones to find the one that has the clearest sound.</string>
+    <string name="advice_5">Look at the background that will be in your video interviews. Is it a direct eyeline to your hamster cage or your bathroom?
+        Both of those are distracting in different ways and will look unprofessional. Avoid that by making sure your background is a plain wall or a more professional looking space.
+        Do not have that option available? If you are on a Zoom call, you can set up a virtual background to display an image as your background during the call. Shutterstock also has several free virtual backgrounds you can download and use.</string>
+    <string name="advice_6">Once you have your set up in place, do a trial run with a friend or family member. Make sure your webcam, microphone, and headphones are working correctly. Make any adjustments you need to in your trial call so you are ready to go when your meeting starts.
+        Make sure you have a good internet connection. If your internet is likely to cut out, make sure no one else in the house is downloading all 16 seasons of Greys Anatomy at the same time as your video call. Do not let your internet connection let you down your preparations.
+        As a courtesy to others, know how to mute your microphone. Unmute yourself quickly when you need to speak and put mute back on afterwards. This will ensure no random outside notices make their way onto your video call.</string>
+    <string name="advice_7">Even though people will only be seeing the top half of your body, you still need to be aware of your body language.
+        Sit up straight in your chair with your feet on the ground. Keep the fidgeting down to a minimum. Know what you look like before you get on the video call – do not check your teeth once you are connected.
+        Do not forget that you are on camera. Part of looking good means acting as you would in person. Pay close attention to your video call settings and the expression on your face. We can all still see you!</string>
+    <string name="advice_8">As with regular meetings, try to clear the room you are in of everything that will distract you. Turn off the radio and TV. Close the door so family/roommates, children or pets do not interrupt you mid-call. But if they do, roll with it as best you can.
+        This is an unusual time, and we are often working in less than ideal home office situations. It may put a smile on a coworkers face to see your cat appear on-screen for a while. If your child needs to know, “Why are we having spaghetti for the third night in a row?” politely excuse yourself out loud, hit mute, and try to come back as quick as possible.
+        Just remember you are still on camera, and the video call is still going.</string>
+
+
+    <string name="policy_granted1">Google wants a neat and clean environment in the play store so according to the new policy, every user have to accept a new policy before uploading any content on our app.</string>
+    <string name="policy_granted2">Please accept the following terms otherwise you are not allowed to use our app</string>
+    <string name="policy_granted3">1. you are not allowed to upload any objectionable and prohibited content that is against our policy such as sexual, bad language</string>
+    <string name="policy_granted4">2. you will not harass any user.</string>
+    <string name="policy_granted5">3. you will not share any adult content.</string>
+    <string name="policy_granted6">4. you will respect other members of the app.</string>
+
+</resources>

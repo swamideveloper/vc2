@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FBED0E</color>
+    <color name="purple_500">#FBED0E</color>
+    <color name="purple_700">#FBED0E</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_primary">#1E1E1E</color>
+    <color name="text_secondary">#655F06</color>
+    <color name="text_sp_tag">#606060</color>
+    <color name="app_bg">#FFFFF0</color>
+    <color name="bg">#FFFFFFFF</color>
+    <color name="green">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+    <color name="light_black">#2C2C2C</color>
+    <color name="black_trans">#4D000000</color>
+    <color name="gray">#808080</color>
+    <color name="light_white">#B3FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="red_light">#E63030</color>
+    <color name="colorControlActivated">#3eFF4B72</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="silver_light">#ECECEC</color>
+    <color name="chormecolor">#FFFFFF</color>
+
+
+    <color name="colorPrimaryDark">#FBED0E</color>
+    <color name="colorAccent">#FBED0E</color>
+    <color name="colorPrimary">#FBED0E</color>
+
+    <color name="app_light">#FBED0E</color>
+    <color name="app_meduim">#FBED0E</color>
+    <color name="app_dark">#FBED0E</color>
+    <color name="app_color">#FBED0E </color>
+
+
+    <color name="ylo_1">#F6BA07</color>
+    <color name="grn_1">#000000</color>
+
+    <color name="betaDialod">#40000000</color>
+
+    <color name="bgTextColor">#000000</color>
+    <color name="buttonColor">#1E1E1E</color>
+    <color name="buttonTextColor">#ffffff</color>
+    <color name="fgColor">#EBEBEB</color>
+    <color name="grey">#c1c1c1</color>
+    <color name="grey2">#989898</color>
+    <color name="blue_lnk">#4683F5</color>
+
+</resources>

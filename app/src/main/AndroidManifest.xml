@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.videocall.globalcall.livecallwithfun">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="com.videocall.globalcall.livecallwithfun.shyame.aakhometeri"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gamevc2"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.surmesham.pp_show"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.harghadi.teraname"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.harghadi.kyuhona"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Gamevc2" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.kyukyu"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.tujanena"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.khwab.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.teresamne"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.hamtogile"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.bolakuchna"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.najanajane"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.VC_Terms_Activity_2"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.VC_Terms_Activity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.milokefasle"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.tumsehi.haifasle"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProgressBar" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.harghadi.musiconly"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Gamevc2" />
+        <activity
+            android:name="com.videocall.globalcall.livecallwithfun.shyame.newkese"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashOnly">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

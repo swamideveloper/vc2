@@ -10,6 +10,10 @@ import retrofit2.http.POST;
 
 public interface APIInterface {
 
+
     @GET("getRequest.json")
     Call<JsonObject> doCall();
+
+    @GET("getSafe.json")
+    Call<JsonObject> doSafe();
 }

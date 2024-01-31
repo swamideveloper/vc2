@@ -166,7 +166,6 @@ public class Live_Msg_Service extends Service {
                 notificationManager.createNotificationChannel(mChannel);
             }
             notificationManager.notify(reqCode, notificationBuilder.build());
-//            Log.e("@@notify", "notify fire---");
         }
     }
 

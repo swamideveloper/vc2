@@ -58,11 +58,10 @@ public class newkese extends splashconnect_act {
     private void manageVip() {
 
         if (new hokebhi().getVipType().equals("in_app_gold")) {
-            new Data_Preference(this).setAdsFlag(false);
             new Data_Preference(this).redeemGoldPlan();
-            new Data_Preference(this).set_IncomingWelcome_Fix();
+//            new Data_Preference(this).setAdsFlag(false);
+//            new Data_Preference(this).set_IncomingWelcome_Fix();
         } else if (new hokebhi().getVipType().equals("in_app_silver")) {
-            new Data_Preference(this).setAdsFlag(false);
             new Data_Preference(this).redeemSilverPlan();
         } else if (new hokebhi().getVipType().equals("in_app_bronze")) {
             new Data_Preference(this).redeemBronzePlan();

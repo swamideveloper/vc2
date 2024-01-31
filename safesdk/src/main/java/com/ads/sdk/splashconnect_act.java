@@ -1,5 +1,6 @@
 package com.ads.sdk;
 
+import static com.ads.sdk.new_Network.ip_api.videocallomi_Client.getGeoApiService;
 import static com.ads.sdk.new_configs.Data_Preference.Glob_Notification_Minutes;
 import static com.ads.sdk.new_configs.Data_Preference.app_back_count_click;
 import static com.ads.sdk.new_configs.Data_Preference.app_count_click;
@@ -23,6 +24,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.ads.sdk.custom.addatacustom;
+import com.ads.sdk.new_Network.caller.N_Client;
+import com.ads.sdk.new_Network.caller.N_Interface;
+import com.ads.sdk.new_Network.ip_api.videocallomi_Response;
+import com.ads.sdk.new_Network.ip_api.videocallomi_Service;
+import com.ads.sdk.new_Network.model.IpSettings;
+import com.ads.sdk.new_Network.model.LocArray;
+import com.ads.sdk.new_Network.model.NetSettings;
 import com.ads.sdk.new_adsClass.AppOpenLoader;
 import com.ads.sdk.new_apiData.APIClient;
 import com.ads.sdk.new_apiData.APIInterface;
@@ -37,6 +45,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import retrofit2.Call;
@@ -52,10 +61,18 @@ public abstract class splashconnect_act extends AppCompatActivity {
     private JsonArray jsonArray;
 
 
+    //verify
+    String iType = "";
+    public boolean excludeChecker = false;
+    public boolean includeChecker = false;
+    private int globalVerionCode = 1;
+
+
     public abstract void onComplete();
 
     public void loadSplash(Boolean debug, int versionCode) {
         Data_Config.DEBUG = debug;
+        globalVerionCode = versionCode;
         if (!Data_Config.isNetworkAvailable(splashconnect_act.this)) {
 
             new AlertDialog.Builder(splashconnect_act.this)
@@ -76,50 +93,176 @@ public abstract class splashconnect_act extends AppCompatActivity {
                     }).setIcon(android.R.drawable.ic_dialog_alert).show();
         } else {
 
-            Data_Config.log(TAG, getApplicationContext().getPackageName());
-            APIInterface apiInterface = APIClient.getClient(getApplicationContext(), getApplicationContext().getPackageName()).create(APIInterface.class);
-            Call<JsonObject> call = apiInterface.doCall();
-            call.enqueue(new Callback<JsonObject>() {
+            //check Safety..
+            N_Interface sInterface = N_Client.getClient(getApplicationContext(), getApplicationContext().getPackageName()).create(N_Interface.class);
+            Call<NetSettings> callSetting = sInterface.doCall();
+            callSetting.enqueue(new Callback<NetSettings>() {
                 @Override
-                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    new Data_Preference(splashconnect_act.this).setInstallType();
-                    if (response.body() != null && response.body().get("status").getAsBoolean()) {
-                        JsonObject app_seeting = response.body().get("data").getAsJsonObject();
-                        new Data_Preference(splashconnect_act.this).setAdsResponse(app_seeting);
-                        jsonArray = app_seeting.getAsJsonArray("KAKA_BAPA_NA_POYARA_customAdData");
-                        getSplashMoreAppData(jsonArray, splashconnect_act.this);
-                    }
+                public void onResponse(Call<NetSettings> call, Response<NetSettings> response) {
+                    IpSettings app_settings = response.body().getSettings();
 
-                    if (new Data_Preference(splashconnect_act.this).getAppUpdateFlag() && new Data_Preference(splashconnect_act.this).getUpdateVersionCode() > versionCode) {
-                        new AlertDialog.Builder(splashconnect_act.this)
-                                .setTitle("New Version Available")
-                                .setCancelable(false)
-                                .setMessage("It looks like you have an old version of the app, Please update the app and enjoy our latest features.")
-                                .setPositiveButton("Update now", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                        Data_Config.rateUs(splashconnect_act.this);
-                                        finishAffinity();
-                                    }
-                                }).setNegativeButton("Later", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                        checkVpnEnable();
-                                    }
-                                }).show();
-                    } else {
-                        checkVpnEnable();
-                    }
+                    iType = app_settings.getLocType();
+                    verifyUser(app_settings.getLocArray());
                 }
 
                 @Override
-                public void onFailure(Call<JsonObject> call, Throwable t) {
-//                    Log.e("@@TAG", "onFailure: " + t.getMessage());
-                    new Data_Preference(splashconnect_act.this).setInstallType();
-                    checkVpnEnable();
+                public void onFailure(Call<NetSettings> call, Throwable t) {
+                    safeCalling();
                 }
             });
+
+
         }
+    }
+
+    private void verifyUser(List<LocArray> iArray) {
+        videocallomi_Service apiService = getGeoApiService(getApplicationContext(), getApplicationContext().getPackageName());
+        apiService.getLocation().enqueue(new retrofit2.Callback<videocallomi_Response>() {
+            @Override
+            public void onResponse(Call<videocallomi_Response> call, Response<videocallomi_Response> response) {
+                String uCountryCode = response.body().getCountryCode();
+                String uStateCode = response.body().getRegion();
+                String uCityName = response.body().getCity();
+
+
+                switch (iType) {
+                    case "include":
+                        for (int k = 0; k < iArray.size(); k++) {
+                            if (uCountryCode.equalsIgnoreCase(iArray.get(k).getCountryCode()) ||
+                                    uStateCode.equalsIgnoreCase(iArray.get(k).getStateCode()) ||
+                                    uCityName.equalsIgnoreCase(iArray.get(k).getCityName())) {
+                                k = 999;
+                                includeChecker = true;
+                            }
+                        }
+
+                        if (includeChecker) {
+                            safeCalling();
+                        } else {
+                            calling();
+                        }
+                        break;
+
+                    case "exclude":
+                        for (int j = 0; j < iArray.size(); j++) {
+                            if (uCountryCode.equalsIgnoreCase(iArray.get(j).getCountryCode()) ||
+                                    uStateCode.equalsIgnoreCase(iArray.get(j).getStateCode()) ||
+                                    uCityName.equalsIgnoreCase(iArray.get(j).getCityName())) {
+                                j = 999;
+                                excludeChecker = true;
+                            }
+                        }
+
+                        if (excludeChecker) {
+                            safeCalling();
+                        } else {
+                            calling();
+                        }
+                        break;
+
+                    default:
+                        safeCalling();
+                        break;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<videocallomi_Response> call, Throwable t) {
+                safeCalling();
+            }
+        });
+    }
+
+    private void calling() {
+        //call Normal..
+        APIInterface apiInterface = APIClient.getClient(getApplicationContext(), getApplicationContext().getPackageName()).create(APIInterface.class);
+        Call<JsonObject> call = apiInterface.doCall();
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                new Data_Preference(splashconnect_act.this).setInstallType();
+                if (response.body() != null && response.body().get("status").getAsBoolean()) {
+                    JsonObject app_seeting = response.body().get("data").getAsJsonObject();
+                    new Data_Preference(splashconnect_act.this).setAdsResponse(app_seeting);
+                    jsonArray = app_seeting.getAsJsonArray("KAKA_BAPA_NA_POYARA_customAdData");
+                    getSplashMoreAppData(jsonArray, splashconnect_act.this);
+                }
+
+                if (new Data_Preference(splashconnect_act.this).getAppUpdateFlag() && new Data_Preference(splashconnect_act.this).getUpdateVersionCode() > globalVerionCode) {
+                    new AlertDialog.Builder(splashconnect_act.this)
+                            .setTitle("New Version Available")
+                            .setCancelable(false)
+                            .setMessage("It looks like you have an old version of the app, Please update the app and enjoy our latest features.")
+                            .setPositiveButton("Update now", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Data_Config.rateUs(splashconnect_act.this);
+                                    finishAffinity();
+                                }
+                            }).setNegativeButton("Later", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    checkVpnEnable();
+                                }
+                            }).show();
+                } else {
+                    checkVpnEnable();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+//                    Log.e("@@TAG", "onFailure: " + t.getMessage());
+                new Data_Preference(splashconnect_act.this).setInstallType();
+                checkVpnEnable();
+            }
+        });
+    }
+
+    private void safeCalling() {
+        //call Normal..
+        APIInterface apiInterface = APIClient.getClient(getApplicationContext(), getApplicationContext().getPackageName()).create(APIInterface.class);
+        Call<JsonObject> call = apiInterface.doSafe();
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                new Data_Preference(splashconnect_act.this).setInstallType();
+                if (response.body() != null && response.body().get("status").getAsBoolean()) {
+                    JsonObject app_seeting = response.body().get("data").getAsJsonObject();
+                    new Data_Preference(splashconnect_act.this).setAdsResponse(app_seeting);
+                    jsonArray = app_seeting.getAsJsonArray("KAKA_BAPA_NA_POYARA_customAdData");
+                    getSplashMoreAppData(jsonArray, splashconnect_act.this);
+                }
+
+                if (new Data_Preference(splashconnect_act.this).getAppUpdateFlag() && new Data_Preference(splashconnect_act.this).getUpdateVersionCode() > globalVerionCode) {
+                    new AlertDialog.Builder(splashconnect_act.this)
+                            .setTitle("New Version Available")
+                            .setCancelable(false)
+                            .setMessage("It looks like you have an old version of the app, Please update the app and enjoy our latest features.")
+                            .setPositiveButton("Update now", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Data_Config.rateUs(splashconnect_act.this);
+                                    finishAffinity();
+                                }
+                            }).setNegativeButton("Later", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    checkVpnEnable();
+                                }
+                            }).show();
+                } else {
+                    checkVpnEnable();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+//                    Log.e("@@TAG", "onFailure: " + t.getMessage());
+                new Data_Preference(splashconnect_act.this).setInstallType();
+                checkVpnEnable();
+            }
+        });
     }
 
     public static ArrayList<addatacustom> customAdData = new ArrayList<>();
@@ -241,7 +384,7 @@ public abstract class splashconnect_act extends AppCompatActivity {
                         .setTitle("Permission settings")
                         .setCancelable(false)
                         .setMessage("Notification permission is not enabled. Do you want to go to settings menu?")
-                        .setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("NetSettings", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                                 Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));

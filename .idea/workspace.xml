@@ -9,13 +9,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fed394-be21-4ce2-842e-fd45de2cf508" name="Changes" comment="frist" />
+    <list default="true" id="07fed394-be21-4ce2-842e-fd45de2cf508" name="Changes" comment="vc2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/harghadi/aakhometeri.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/harghadi/aakhometeri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/khwab/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/khwab/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/shyame/newkese.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/shyame/newkese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/bolakuchna.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/bolakuchna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/haifasle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/haifasle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/kyukyu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/kyukyu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/milokefasle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/milokefasle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/najanajane.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/videocall/globalcall/livecallwithfun/tumsehi/najanajane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/IntertitialAdsEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/IntertitialAdsEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_adsClass/InterAdLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_adsClass/InterAdLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_apiData/APIInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_apiData/APIInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_configs/Data_Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_configs/Data_Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_configs/Data_Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/new_configs/Data_Preference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/notify/Live_Msg_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/notify/Live_Msg_Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/splashconnect_act.java" beforeDir="false" afterPath="$PROJECT_DIR$/safesdk/src/main/java/com/ads/sdk/splashconnect_act.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[09101FDD4006KV]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -71,23 +89,23 @@
     "TODO_SCOPE": "All Places",
     "cidr.known.project.marker": "true",
     "last_directory_selection": "F:/HappyNewYear_2023/mandi/New Video Call/app/src/main/res/drawable",
-    "last_opened_file_path": "F:/HappyNewYear_2023/mandi/New Video Call/app/src/main/assets"
+    "last_opened_file_path": "F:/HappyNewYear_2023/mandi/New Video Call/safesdk/src/main/java/com/ads/sdk/new_Network/model"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\java\com\ads\sdk\new_Network\model" />
+      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\java\com\ads\sdk\new_Network\ip_api" />
+      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\java\com\ads\sdk\new_Network\caller" />
+      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\java\com\ads\sdk\new_Network" />
       <recent name="F:\HappyNewYear_2023\mandi\New Video Call\app\src\main\assets" />
-      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\res\raw" />
-      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\safesdk\src\main\java\com\ads\sdk" />
-      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\app\src\main\res\drawable" />
-      <recent name="F:\HappyNewYear_2023\mandi\New Video Call\app\src\main\res\layout" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ads.sdk.new_Network.ip_api" />
+      <recent name="com.ads.sdk.new_Network.caller" />
       <recent name="com.test.myapp.vcall" />
       <recent name="com.test.myapp.vcall.onetime" />
       <recent name="com.test.myapp.vcall.gopal_india_in_app" />
-      <recent name="com.test.myapp.vcall.gopal_india_telecom" />
-      <recent name="com.test.myapp.vcall.gopal_india_design" />
     </key>
     <key name="android.template.1301554006">
       <recent name="com.test.myapp.vcall.onetime" />
@@ -178,11 +196,19 @@
       <option name="project" value="LOCAL" />
       <updated>1703843223702</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="vc2">
+      <created>1706629721356</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706629721356</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frist" />
-    <option name="LAST_COMMIT_MESSAGE" value="frist" />
+    <MESSAGE value="vc2" />
+    <option name="LAST_COMMIT_MESSAGE" value="vc2" />
   </component>
 </project>

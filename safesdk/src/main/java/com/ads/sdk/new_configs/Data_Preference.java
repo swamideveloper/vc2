@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -68,6 +67,7 @@ public class Data_Preference {
     private static final String KEY_ADMOB_BANNER = "KAKA_BAPA_NA_POYARA_nativeBannerAd";
     private static final String KEY_INTERSTITIAL_FREQUENCY = "KAKA_BAPA_NA_POYARA_forwardClick"; //
     private static final String KEY_INTERSTITIAL_BACK_FREQUENCY = "KAKA_BAPA_NA_POYARA_backClick"; //
+    private static final String KEY_COMBO_FREQUENCY = "KAKA_BAPA_NA_POYARA_comboClick"; //
     private static final String KEY_AD_DIALOG = "KAKA_BAPA_NA_POYARA_admob_ad_dailog";
     private static final String KEY_APP_OPEN_AD_SEC = "KAKA_BAPA_NA_POYARA_app_open_ad_sec";
 
@@ -178,7 +178,7 @@ public class Data_Preference {
 
     public void setAdsResponse(JsonObject object) {
         if (object != null) {
-            Data_Config.log(TAG, "setAdsResponse: " + object.toString());
+
 
             checkNotNull(object, KEY_PRIVACY_LINK, "KAKA_BAPA_NA_POYARA_privacyLink"); //
             checkNotNull(object, KEY_UPDATE_APP, "KAKA_BAPA_NA_POYARA_updateDialog"); //
@@ -187,6 +187,7 @@ public class Data_Preference {
             checkNotNull(object, KEY_ADS_FLAG, "KAKA_BAPA_NA_POYARA_adShow_Sts"); //
             checkNotNull(object, KEY_INTERSTITIAL_FREQUENCY, "KAKA_BAPA_NA_POYARA_forwardClick"); //
             checkNotNull(object, KEY_INTERSTITIAL_BACK_FREQUENCY, "KAKA_BAPA_NA_POYARA_backClick"); //
+            checkNotNull(object, KEY_COMBO_FREQUENCY, "KAKA_BAPA_NA_POYARA_comboClick"); //
 
             checkNotNull(object, KEY_FORWARD_INTER_ALTERNATIVE, "KAKA_BAPA_NA_POYARA_forwardInterstitialF");//
             checkNotNull(object, KEY_BACKWARD_INTER_ALTERNATIVE, "KAKA_BAPA_NA_POYARA_backwardInterstitialB");//
@@ -304,6 +305,15 @@ public class Data_Preference {
 
             getCountClick();
             getCountClickBack();
+            manageCombo();
+        }
+    }
+
+    private void manageCombo() {
+        if (getFbAdshowStatus().equals("1") && getAdmobInterStatus().equals("1")) {
+            isComboActive = true;
+        } else {
+            isComboActive = false;
         }
     }
 
@@ -311,7 +321,7 @@ public class Data_Preference {
         try {
             preferences.edit().putString(key, object.get(jsonKey).getAsString()).apply();
         } catch (Exception e) {
-            Data_Config.log(TAG, "setAdsResponse: checkNotNull " + e.toString() + "\n" + jsonKey);
+            e.getMessage();
         }
     }
 
@@ -600,6 +610,12 @@ public class Data_Preference {
 
     public static int app_count_click = -1;
     public static int app_back_count_click = -1;
+    public static int app_combo_counter = 0;
+    public static boolean isComboActive = false;
+
+    public String getComboCount() {
+        return preferences.getString(KEY_COMBO_FREQUENCY, "0");
+    }
 
     public Integer getCountClick() {
         int value = 0;
@@ -638,6 +654,7 @@ public class Data_Preference {
     public String getNativeBtnColor() {
         return preferences.getString(KEY_NATIVE_BUTTON_COLOR, "#ff1744");
     }
+
     public String getKeyNativeTagColor() {
         return preferences.getString(KEY_NATIVE_TAG_COLOR, "#ff1744");
     }
@@ -866,7 +883,7 @@ public class Data_Preference {
 
 
     //video call
-    public void set_IncomingWelcome_Fix(){
+    public void set_IncomingWelcome_Fix() {
         preferences.edit().putString(KEY_VC_INCOMING_WELCOME, "1").apply();
     }
 
@@ -924,9 +941,12 @@ public class Data_Preference {
 
 
     public void redeemGoldPlan() {
+        preferences.edit().putString(KEY_VC_INCOMING_WELCOME, "1").apply();
         preferences.edit().putString(KEY_VC_INCOMING_LONGAPP, "0").apply();
+
         preferences.edit().putString(KEY_ADMOB_APPOPEN_STATUS, "0").apply();
         preferences.edit().putString(KEY_ADMOB_INTER_STATUS, "0").apply();
+        preferences.edit().putString(KEY_ADMOB_BACK_STATUS, "0").apply();
         preferences.edit().putString(KEY_ADMOB_NATIVE_STATUS, "0").apply();
         preferences.edit().putString(KEY_ADMOB_BANNER_STATUS, "0").apply();
         preferences.edit().putString(KEY_FB_ADSHOW_STATUS, "0").apply();
@@ -934,7 +954,13 @@ public class Data_Preference {
     }
 
     public void redeemSilverPlan() {
-
+        preferences.edit().putString(KEY_ADMOB_APPOPEN_STATUS, "0").apply();
+        preferences.edit().putString(KEY_ADMOB_INTER_STATUS, "0").apply();
+        preferences.edit().putString(KEY_ADMOB_BACK_STATUS, "0").apply();
+        preferences.edit().putString(KEY_ADMOB_NATIVE_STATUS, "0").apply();
+        preferences.edit().putString(KEY_ADMOB_BANNER_STATUS, "0").apply();
+        preferences.edit().putString(KEY_FB_ADSHOW_STATUS, "0").apply();
+        preferences.edit().putString(KEY_CUSTOM_ADSHOW_STATUS, "0").apply();
     }
 
     public void redeemBronzePlan() {

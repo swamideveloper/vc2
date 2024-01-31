@@ -324,6 +324,8 @@ public class InterAdLoader {
         return interstitialBackAd != null;
     }
 
+
+
     public void ShowInterBackAd(Activity activity, OnShowAdCompleteListener listener, int how_many_clicks) {
         count_click_back++;
 
@@ -336,7 +338,8 @@ public class InterAdLoader {
                 if (how_many_clicks != 0) {
                     if (count_click_back % how_many_clicks == 0) {
                         //intads_activity.newIntent(activity, listener);
-                        directHit(activity);
+//                        directHit(activity);
+                        listener.onShowAdComplete();
                     } else {
                         if (listener != null) {
                             listener.onShowAdComplete();
@@ -345,7 +348,8 @@ public class InterAdLoader {
                 } else {
                     if (new Data_Preference(activity).getCustomBack().equals("1")) {
                         //intads_activity.newIntent(activity, listener);
-                        directHit(activity);
+//                        directHit(activity);
+                        listener.onShowAdComplete();
                     } else {
                         if (listener != null) {
                             listener.onShowAdComplete();
@@ -386,7 +390,8 @@ public class InterAdLoader {
                             interstitialBackAd = null;
                             if (new Data_Preference(activity).getCustomAdshowStatus().equals("1") && new Data_Preference(activity).getCustomInter().equals("1")) {
                                 //intads_activity.newIntent(activity, listener);
-                                directHit(activity);
+//                        directHit(activity);
+                                listener.onShowAdComplete();
                             } else {
                                 if (listener != null) {
                                     listener.onShowAdComplete();
@@ -432,7 +437,8 @@ public class InterAdLoader {
                         interstitialBackAd = null;
                         if (new Data_Preference(activity).getCustomAdshowStatus().equals("1") && new Data_Preference(activity).getCustomInter().equals("1")) {
                             //intads_activity.newIntent(activity, listener);
-                            directHit(activity);
+//                        directHit(activity);
+                            listener.onShowAdComplete();
                         } else {
                             if (listener != null) {
                                 listener.onShowAdComplete();

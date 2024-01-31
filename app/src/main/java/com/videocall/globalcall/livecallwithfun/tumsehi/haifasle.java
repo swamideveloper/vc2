@@ -27,6 +27,7 @@ import com.karumi.dexter.listener.DexterError;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.videocall.globalcall.livecallwithfun.R;
+import com.videocall.globalcall.livecallwithfun.VectorManager;
 import com.videocall.globalcall.livecallwithfun.harghadi.teraname;
 import com.videocall.globalcall.livecallwithfun.surmesham.hokebhi;
 
@@ -45,13 +46,8 @@ public class haifasle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
-
-        if (new Data_Preference(this).getAdsFlag()) {
-            isVectorShow = false;
-        } else {
-            isVectorShow = true;
-        }
+        
+        VectorManager.changeVectorStatus(this);
 
         if (new hokebhi().isTerms() && new Data_Preference(haifasle.this).getKeyTermscreen().equals("1")) {
             new hokebhi().stopTerms();
@@ -152,7 +148,7 @@ public class haifasle extends AppCompatActivity {
     private void showSettingsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(haifasle.this, R.style.Theme_Dllg);
         builder.setTitle("Need Permissions");
-        builder.setMessage("This App needs CAMERA Permission to Use Video Call Feature. You can Grant them in App Settings.");
+        builder.setMessage("This App needs CAMERA Permission to Use Video Call Feature. You can Grant them in App NetSettings.");
         builder.setPositiveButton("GOTO SETTINGS", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

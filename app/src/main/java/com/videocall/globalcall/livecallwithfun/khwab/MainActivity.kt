@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.ads.sdk.new_configs.Data_Preference
 import com.videocall.globalcall.livecallwithfun.R
+import com.videocall.globalcall.livecallwithfun.VectorManager
 import com.videocall.globalcall.livecallwithfun.surmesham.hokebhi
 import dev.shreyaspatil.easyupipayment.EasyUpiPayment
 import dev.shreyaspatil.easyupipayment.listener.PaymentStatusListener
@@ -227,6 +228,7 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
     }
 
     private fun manageVip() {
+        VectorManager.changeVectorStatus(this)
         if (hokebhi.getVipType() == "in_app_gold") {
             Data_Preference(this).setAdsFlag(false)
             Data_Preference(this).redeemGoldPlan()

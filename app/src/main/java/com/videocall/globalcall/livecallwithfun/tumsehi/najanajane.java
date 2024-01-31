@@ -40,9 +40,7 @@ public class najanajane extends AppCompatActivity {
             }
         });
 
-        if (!isVectorShow) {
-            ((ImageView) findViewById(R.id.vector_pro)).setVisibility(View.GONE);
-        }
+
 
         incoming_counter++;
 
@@ -96,6 +94,11 @@ public class najanajane extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (!isVectorShow) {
+            ((ImageView) findViewById(R.id.vector_pro)).setVisibility(View.GONE);
+        }
+
         if (new Data_Preference(this).getKeyOnresumenativeshow().equals("1")) {
             native_ShowAds(this, findViewById(R.id.native_container), 1);
         }

@@ -72,11 +72,7 @@ public class Data_Config {
         return (networkInfo != null && networkInfo.isConnected());
     }
 
-    public static void log(String key, String value) {
-        if (DEBUG) {
-//            Log.d(key, "App: " + value);
-        }
-    }
+
 
     public static void rateUs(Activity activity) {
         try {
